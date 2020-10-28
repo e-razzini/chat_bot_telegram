@@ -33,23 +33,33 @@ bot.on('voice',ctx =>{
     console.log(voice);
 })
 //evento de foto
-bot.on('photo',ctx =>{
+bot.on('photo', async ctx =>{
+
     const photo = ctx.message.photo
+    const legend = ctx.message.caption
     console.log(photo)
-    photo.foreEach((ft,i)=>{
-        ctx.reply(`foto ${i} tem resolução ${ft.width} x ${ft.height}`)
-    })
+
+    for([i,ft] of photo.entries()){    
+      await ctx.reply(`foto ${i} tem resolução ${ft.width} x ${ft.height}`)
+    }
+
+    ctx.reply(`legenda: ${legend}`)
 })
 //evento figurinha
 bot.on('stricker',ctx =>{
+
     const figurinha = ctx.message.stricker
     console.log(figurinha)    
-        ctx.reply(`voce envio uma figurinha ${figurinha.emoji} do pacote ${figurinha.set_name}`)    
+    ctx.reply(`voce envio uma figurinha ${figurinha.emoji} do pacote ${figurinha.set_name}`)  
+    
+    
 })
 //animação gif animado
 bot.on('animation',ctx =>{
+
     const animacao = ctx.message.animation
     console.log(animacao)    
-        ctx.reply(`animação ${animation.duraction} do pacote ${animation.file_size} bytes`)    
+    ctx.reply(`animação ${animation.duraction} do pacote ${animation.file_size} bytes`)    
+
 })
 bot.launch();
