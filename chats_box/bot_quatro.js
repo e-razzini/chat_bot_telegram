@@ -15,6 +15,7 @@ bot.on('text',ctx => {
     ctx.reply(`text:${ctx.message.text} recebido com sucesso.`)
 });
 
+// evento de localização 
 bot.on('location',ctx =>{
     const location = ctx.message.location
     ctx.reply(`Sei que você esta na latitude ${location.latitude} e logitude ${
