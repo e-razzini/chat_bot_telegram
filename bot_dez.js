@@ -1,6 +1,6 @@
 const env = require('./.env');
 const telegraf = require('telegraf');
-const Axios = require('axius')
+const Axios = require('axios')
 const Fs = require('fs')
 const Path = require('path')
 const downloadImg = require('./donwloadImg')
