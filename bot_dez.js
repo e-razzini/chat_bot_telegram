@@ -35,13 +35,13 @@ bot.on('photo', async ctx => {
 
     const url = `${env.apiFileUrl}/${res.data.result.file_path}`
 
-    const file_uniq_id = res.data.result.file_unique_id
+    const file_unique_id = res.data.result.file_unique_id
 
     //baixando o arquivo localmente
-    await downloadImg(url, file_uniq_id)
+    await downloadImg(url, file_unique_id)
 
     // responder com o arquivo local
-    const source = Path.resolve(__dirname, 'img', `${file_uniq_id}.jpg`)
+    const source = Path.resolve(__dirname, 'img', `${file_unique_id}.jpg`)
 
 
    console.log(source)
